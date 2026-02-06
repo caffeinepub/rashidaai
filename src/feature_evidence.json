@@ -1,0 +1,162 @@
+{
+  "kind": "feature_evidence_report",
+  "features": [
+    {
+      "featureId": "feature-build-a-clean-modern-fully-responsive-landing-page-for-rashidaai-ai-made-easy-bootcamp-using-a-vibrant-turquoise-hot-pink-purple-color-palette-with-clear-sectioning-and-strong-calls-to-action-for-joining-the-waitlist",
+      "featureTitle": "Build a clean, modern, fully responsive landing page for “RashidaAi: AI Made Easy Bootcamp” using a vibrant turquoise + hot pink + purple color palette, with clear sectioning and strong calls-to-action for joining the waitlist.",
+      "files": [
+        "frontend/index.html",
+        "frontend/src/App.tsx",
+        "frontend/src/index.css",
+        "frontend/tailwind.config.js"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-1"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-add-a-waitlist-signup-form-that-allows-visitors-to-enter-and-submit-their-information-for-the-feb-14-2026-4-week-bootcamp-waitlist",
+      "featureTitle": "Add a Waitlist signup form that allows visitors to enter and submit their information for the Feb 14, 2026 4-week bootcamp waitlist.",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/components/waitlist/WaitlistForm.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-2"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-add-an-enrollment-countdown-timer-that-counts-down-to-february-14-2026-displaying-days-hours-minutes-seconds-and-handling-the-event-started-state-gracefully",
+      "featureTitle": "Add an enrollment countdown timer that counts down to February 14, 2026, displaying days/hours/minutes/seconds and handling the event-started state gracefully.",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/components/countdown/CountdownTimer.tsx",
+        "frontend/src/hooks/useCountdown.ts"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-4"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-create-a-syllabus-section-that-presents-the-bootcamp-curriculum-clearly-e-g-week-by-week-for-a-4-week-program-with-scannable-headings-and-bullet-points",
+      "featureTitle": "Create a Syllabus section that presents the bootcamp curriculum clearly (e.g., week-by-week for a 4-week program), with scannable headings and bullet points.",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/components/syllabus/SyllabusSection.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-5"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-add-an-interactive-preview-component-for-the-course-e-g-clickable-tabs-cards-per-week-that-reveal-sample-lesson-details-without-requiring-external-services",
+      "featureTitle": "Add an “interactive preview” component for the course (e.g., clickable tabs/cards per week that reveal sample lesson details) without requiring external services.",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/components/preview/InteractivePreview.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-6"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-add-an-faq-accordion-section-with-multiple-questions-and-expandable-answers",
+      "featureTitle": "Add an FAQ accordion section with multiple questions and expandable answers.",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/components/faq/FaqAccordion.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-7"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-include-a-chatbot-widget-on-the-landing-page-that-can-answer-common-bootcamp-questions-using-a-local-scripted-flow-no-external-llm-api-calls-and-can-direct-users-to-the-waitlist-form",
+      "featureTitle": "Include a chatbot widget on the landing page that can answer common bootcamp questions using a local scripted flow (no external LLM/API calls), and can direct users to the waitlist form.",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/components/chatbot/ChatbotWidget.tsx",
+        "frontend/src/components/chatbot/chatbotScript.ts"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-8"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-add-generated-brand-visuals-as-static-assets-and-use-them-on-the-landing-page-hero-branding-area-and-or-favicon-stored-under-frontend-public-assets-generated",
+      "featureTitle": "Add generated brand visuals as static assets and use them on the landing page (hero/branding area and/or favicon), stored under frontend/public/assets/generated.",
+      "files": [
+        "frontend/index.html",
+        "frontend/src/App.tsx",
+        "frontend/src/components/chatbot/ChatbotWidget.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-9"
+      ],
+      "confidence": "high"
+    }
+  ]
+}

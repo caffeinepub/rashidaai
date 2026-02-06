@@ -1,0 +1,20 @@
+{
+  "frontend/src/index.css": "Global styles with vibrant turquoise/hot pink/purple OKLCH color system for both light and dark modes, plus gradient utilities for the brand aesthetic.",
+  "frontend/tailwind.config.js": "Tailwind configuration extended with custom colors, Space Grotesk display font, glow shadows, and custom animations for the modern landing page design.",
+  "frontend/index.html": "HTML entry point with meta tags, favicon reference, and Google Fonts preload for Inter and Space Grotesk fonts.",
+  "frontend/src/App.tsx": "Main application component that orchestrates the single-page landing layout with all sections (hero, countdown, syllabus, preview, FAQ, waitlist, footer) and chatbot widget.",
+  "frontend/src/components/Header.tsx": "Sticky header with logo, desktop/mobile navigation, and prominent \"Join Waitlist\" CTA that scrolls to sections smoothly.",
+  "frontend/src/components/Hero.tsx": "Hero section with background image overlay, gradient text heading, dual CTAs, and key bootcamp stats displayed in a grid.",
+  "frontend/src/components/countdown/CountdownSection.tsx": "Wrapper section for the countdown timer with heading and description, styled with muted background.",
+  "frontend/src/components/countdown/CountdownTimer.tsx": "Countdown display component showing days/hours/minutes/seconds in a responsive grid with gradient text and hover effects.",
+  "frontend/src/hooks/useCountdown.ts": "Custom React hook that calculates and updates remaining time to target date every second, with cleanup and expired state handling.",
+  "frontend/src/components/syllabus/SyllabusSection.tsx": "Four-week curriculum display with icons, week titles, and topic lists in a responsive card grid layout.",
+  "frontend/src/components/preview/InteractivePreview.tsx": "Interactive course preview with week selector buttons and detailed lesson content panel that updates on selection.",
+  "frontend/src/components/faq/FaqAccordion.tsx": "Accessible FAQ accordion with eight bootcamp-related questions, smooth expand/collapse animations, and keyboard support.",
+  "frontend/src/components/waitlist/WaitlistSection.tsx": "Waitlist section wrapper with heading, limited spots badge, and the waitlist form component.",
+  "frontend/src/components/waitlist/WaitlistForm.tsx": "Waitlist form with name/email inputs, validation, loading states, success message, and graceful duplicate email handling.",
+  "frontend/src/hooks/useQueries.ts": "React Query mutation hook for adding users to the waitlist via the backend actor with error handling and cache invalidation.",
+  "frontend/src/components/Footer.tsx": "Footer with logo, quick links, bootcamp details, and caffeine.ai attribution with heart icon.",
+  "frontend/src/components/chatbot/ChatbotWidget.tsx": "Floating chatbot widget with open/close toggle, message display, and input field that uses local scripted responses.",
+  "frontend/src/components/chatbot/chatbotScript.ts": "Local intent matching logic for chatbot with predefined keywords and responses for common bootcamp questions, plus waitlist action trigger."
+}

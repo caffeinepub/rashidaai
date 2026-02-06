@@ -1,0 +1,84 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    :root {
+        --radius: 0.75rem;
+        /* Vibrant turquoise/hot pink/purple palette */
+        --background: 0.98 0.01 200;
+        --foreground: 0.15 0.02 260;
+        --card: 1 0 0;
+        --card-foreground: 0.15 0.02 260;
+        --popover: 1 0 0;
+        --popover-foreground: 0.15 0.02 260;
+        /* Turquoise primary */
+        --primary: 0.65 0.15 190;
+        --primary-foreground: 1 0 0;
+        /* Hot pink secondary */
+        --secondary: 0.70 0.25 340;
+        --secondary-foreground: 1 0 0;
+        /* Purple accent */
+        --accent: 0.60 0.20 290;
+        --accent-foreground: 1 0 0;
+        --muted: 0.95 0.01 260;
+        --muted-foreground: 0.50 0.02 260;
+        --destructive: 0.577 0.245 27.325;
+        --destructive-foreground: 0.985 0 0;
+        --border: 0.90 0.02 260;
+        --input: 0.90 0.02 260;
+        --ring: 0.65 0.15 190;
+        --chart-1: 0.65 0.15 190;
+        --chart-2: 0.70 0.25 340;
+        --chart-3: 0.60 0.20 290;
+        --chart-4: 0.75 0.18 210;
+        --chart-5: 0.68 0.22 320;
+    }
+
+    .dark {
+        --background: 0.12 0.03 260;
+        --foreground: 0.98 0.01 200;
+        --card: 0.18 0.03 260;
+        --card-foreground: 0.98 0.01 200;
+        --popover: 0.15 0.03 260;
+        --popover-foreground: 0.98 0.01 200;
+        --primary: 0.70 0.18 190;
+        --primary-foreground: 0.12 0.03 260;
+        --secondary: 0.75 0.28 340;
+        --secondary-foreground: 0.12 0.03 260;
+        --accent: 0.65 0.22 290;
+        --accent-foreground: 0.98 0.01 200;
+        --muted: 0.22 0.03 260;
+        --muted-foreground: 0.65 0.02 260;
+        --destructive: 0.704 0.191 22.216;
+        --destructive-foreground: 0.98 0.01 200;
+        --border: 0.25 0.03 260;
+        --input: 0.25 0.03 260;
+        --ring: 0.70 0.18 190;
+        --chart-1: 0.70 0.18 190;
+        --chart-2: 0.75 0.28 340;
+        --chart-3: 0.65 0.22 290;
+        --chart-4: 0.78 0.20 210;
+        --chart-5: 0.72 0.25 320;
+    }
+
+    * {
+        @apply border-border;
+    }
+    body {
+        @apply bg-background text-foreground;
+    }
+}
+
+@layer utilities {
+    .gradient-primary {
+        background: linear-gradient(135deg, oklch(var(--primary)) 0%, oklch(var(--secondary)) 50%, oklch(var(--accent)) 100%);
+    }
+    
+    .gradient-text {
+        background: linear-gradient(135deg, oklch(var(--primary)) 0%, oklch(var(--secondary)) 50%, oklch(var(--accent)) 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+    }
+}

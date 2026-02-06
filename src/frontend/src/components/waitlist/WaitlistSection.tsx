@@ -15,7 +15,7 @@ export function WaitlistSection() {
               Join the Waitlist
             </h2>
             <p className="text-lg text-muted-foreground">
-              Be the first to know when enrollment opens for the February 14, 2026 cohort. 
+              Be the first to know when enrollment opens for the February 18, 2026 cohort. 
               Get exclusive early access and special pricing.
             </p>
           </div>

@@ -1,5 +1,6 @@
-import { useMutation, useQueryClient } from '@tanstack/react-query';
+import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
 import { useActor } from './useActor';
+import type { WaitlistEntry } from '../backend';
 
 interface WaitlistData {
   name: string;
@@ -20,5 +21,19 @@ export function useWaitlistMutation() {
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ['waitlist'] });
     }
+  });
+}
+
+export function useWaitlistQuery(isAdminConfirmed: boolean = false) {
+  const { actor, isFetching: actorFetching } = useActor();
+
+  return useQuery<WaitlistEntry[]>({
+    queryKey: ['waitlist'],
+    queryFn: async () => {
+      if (!actor) throw new Error('Actor not available');
+      return actor.getWaitlist();
+    },
+    enabled: !!actor && !actorFetching && isAdminConfirmed,
+    retry: false,
   });
 }

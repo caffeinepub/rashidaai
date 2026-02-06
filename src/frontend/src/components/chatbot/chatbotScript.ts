@@ -15,7 +15,7 @@ export function matchIntent(userInput: string, onJoinWaitlist: () => void): stri
   const intents: Intent[] = [
     {
       keywords: ['start', 'when', 'date', 'begin'],
-      response: 'The bootcamp starts on February 14, 2026. It\'s a 4-week intensive program with live sessions and hands-on projects. Would you like to join the waitlist?'
+      response: 'The bootcamp starts on February 18, 2026. It\'s a 4-week intensive program with live sessions and hands-on projects. Would you like to join the waitlist?'
     },
     {
       keywords: ['duration', 'long', 'weeks', 'time'],
@@ -67,5 +67,5 @@ export function matchIntent(userInput: string, onJoinWaitlist: () => void): stri
   }
 
   // Default response
-  return 'That\'s a great question! The RashidaAi bootcamp is a 4-week intensive program starting February 14, 2026. You can ask me about the start date, duration, prerequisites, tools, pricing, or how to join the waitlist. What would you like to know?';
+  return 'That\'s a great question! The RashidaAi bootcamp is a 4-week intensive program starting February 18, 2026. You can ask me about the start date, duration, prerequisites, tools, pricing, or how to join the waitlist. What would you like to know?';
 }

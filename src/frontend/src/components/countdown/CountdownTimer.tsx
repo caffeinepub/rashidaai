@@ -11,7 +11,7 @@ export function CountdownTimer({ targetDate }: CountdownTimerProps) {
     return (
       <div className="p-8 rounded-2xl bg-card border border-border">
         <p className="text-xl font-semibold text-muted-foreground">
-          The February 14, 2026 cohort has started!
+          The February 18, 2026 cohort has started!
         </p>
         <p className="text-muted-foreground mt-2">
           Join the waitlist for the next cohort.

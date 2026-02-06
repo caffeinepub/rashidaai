@@ -1,4 +1,4 @@
-import { Heart } from 'lucide-react';
+import { Heart, Shield } from 'lucide-react';
 
 export function Footer() {
   return (
@@ -49,13 +49,22 @@ export function Footer() {
                     FAQ
                   </button>
                 </li>
+                <li>
+                  <button
+                    onClick={() => window.location.hash = 'admin'}
+                    className="hover:text-foreground transition-colors flex items-center gap-1"
+                  >
+                    <Shield size={14} />
+                    Admin
+                  </button>
+                </li>
               </ul>
             </div>
 
             <div>
               <h3 className="font-semibold mb-4">Bootcamp Details</h3>
               <ul className="space-y-2 text-sm text-muted-foreground">
-                <li>Start Date: February 14, 2026</li>
+                <li>Start Date: February 18, 2026</li>
                 <li>Duration: 4 Weeks</li>
                 <li>Format: 100% Online</li>
                 <li>Level: Beginner-Friendly</li>

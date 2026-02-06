@@ -10,10 +10,10 @@ export function CountdownSection() {
               Bootcamp Starts In
             </h2>
             <p className="text-muted-foreground">
-              Don't miss out! The February 14, 2026 cohort is filling up fast.
+              Don't miss out! The February 18, 2026 cohort is filling up fast.
             </p>
           </div>
-          <CountdownTimer targetDate={new Date('2026-02-14T00:00:00')} />
+          <CountdownTimer targetDate={new Date('2026-02-18T00:00:00')} />
         </div>
       </div>
     </section>

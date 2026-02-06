@@ -33,7 +33,7 @@ export function Hero({ onJoinWaitlist }: HeroProps) {
           </h1>
 
           <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto">
-            Join RashidaAi's comprehensive bootcamp starting February 14, 2026. 
+            Join RashidaAi's comprehensive bootcamp starting February 18, 2026. 
             Learn AI fundamentals, tools, and real-world applications from industry experts.
           </p>
 

@@ -1,13 +1,13 @@
 import { useState } from 'react';
 import { useWaitlistMutation } from '../../hooks/useQueries';
-import { Loader2, CheckCircle2 } from 'lucide-react';
+import { Loader2, CheckCircle2, AlertCircle } from 'lucide-react';
 
 export function WaitlistForm() {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [submitted, setSubmitted] = useState(false);
 
-  const { mutate: addToWaitlist, isPending, isError, error } = useWaitlistMutation();
+  const { mutate: addToWaitlist, isPending, isError, error, reset } = useWaitlistMutation();
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -16,6 +16,9 @@ export function WaitlistForm() {
       return;
     }
 
+    // Reset any previous errors
+    reset();
+
     addToWaitlist(
       { name: name.trim(), email: email.trim() },
       {
@@ -23,9 +26,16 @@ export function WaitlistForm() {
           setSubmitted(true);
           setName('');
           setEmail('');
+        },
+        onError: (err) => {
+          console.error('Waitlist submission error:', err);
         }
       }
     );
+  };
+
+  const handleRetry = () => {
+    reset();
   };
 
   if (submitted) {
@@ -37,7 +47,7 @@ export function WaitlistForm() {
         <div>
           <h3 className="text-2xl font-bold mb-2">You're on the list!</h3>
           <p className="text-muted-foreground">
-            We'll send you updates about the bootcamp and notify you when enrollment opens.
+            Thank you for joining! You'll receive updates about the bootcamp as we get closer to the February 18, 2026 start date.
           </p>
         </div>
         <button
@@ -49,6 +59,14 @@ export function WaitlistForm() {
       </div>
     );
   }
+
+  const isDuplicateEmail = error instanceof Error && error.message.includes('already in your waitlist');
+  const isConnectionError = error instanceof Error && (
+    error.message.includes('Actor not initialized') || 
+    error.message.includes('Actor not available') ||
+    error.message.includes('network') ||
+    error.message.includes('fetch')
+  );
 
   return (
     <form onSubmit={handleSubmit} className="p-8 rounded-2xl bg-card border border-border space-y-6">
@@ -63,7 +81,7 @@ export function WaitlistForm() {
             value={name}
             onChange={(e) => setName(e.target.value)}
             required
-            className="w-full px-4 py-3 rounded-lg border border-input bg-background focus:outline-none focus:ring-2 focus:ring-ring"
+            className="w-full px-4 py-3 rounded-lg border border-input bg-background focus:outline-none focus:ring-2 focus:ring-ring disabled:opacity-50 disabled:cursor-not-allowed"
             placeholder="Enter your full name"
             disabled={isPending}
           />
@@ -79,7 +97,7 @@ export function WaitlistForm() {
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             required
-            className="w-full px-4 py-3 rounded-lg border border-input bg-background focus:outline-none focus:ring-2 focus:ring-ring"
+            className="w-full px-4 py-3 rounded-lg border border-input bg-background focus:outline-none focus:ring-2 focus:ring-ring disabled:opacity-50 disabled:cursor-not-allowed"
             placeholder="your.email@example.com"
             disabled={isPending}
           />
@@ -87,10 +105,28 @@ export function WaitlistForm() {
       </div>
 
       {isError && (
-        <div className="p-4 rounded-lg bg-destructive/10 border border-destructive/20 text-destructive text-sm">
-          {error instanceof Error && error.message.includes('already in your waitlist')
-            ? 'This email is already on the waitlist. We\'ll keep you updated!'
-            : 'Something went wrong. Please try again.'}
+        <div className="p-4 rounded-lg bg-destructive/10 border border-destructive/20 text-destructive text-sm space-y-2">
+          <div className="flex items-start gap-2">
+            <AlertCircle size={16} className="mt-0.5 flex-shrink-0" />
+            <div className="flex-1">
+              {isDuplicateEmail ? (
+                <p>This email is already on the waitlist. We'll keep you updated!</p>
+              ) : isConnectionError ? (
+                <p>Unable to connect to the server. Please check your connection and try again.</p>
+              ) : (
+                <p>Something went wrong. Please try again. If the problem persists, please contact support.</p>
+              )}
+            </div>
+          </div>
+          {!isDuplicateEmail && (
+            <button
+              type="button"
+              onClick={handleRetry}
+              className="text-destructive hover:underline font-medium text-xs"
+            >
+              Clear error and retry
+            </button>
+          )}
         </div>
       )}
 
